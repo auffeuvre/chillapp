@@ -1,0 +1,7 @@
+  <h4> Messages of <%= @room.name %></h4>
+  <%= turbo_stream_from "messages" %>
+  <div id="messages">
+    <%= render @messages %>
+  </div>
+  <%= @room.id %>
+  <%= render partial: "layouts/new_message_form" %>
