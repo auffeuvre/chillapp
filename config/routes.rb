@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'rooms#index'
 
   resources :users, :rooms, only: [:create, :show]
-  get "/signup", to: "users#new"
+  get "/signup", to: "users#new", as:'signup'
   get "/login", to: "sessions#new"
   post "/sessions", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy"

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:show]
-  
+
   def new
     @user = User.new
   end
@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       @user.save
-      redirect_to @index
-    else  
+      redirect_to root_path
+    else
       redirect :new
     end
   end
